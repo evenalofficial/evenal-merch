@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("Images/clouds-bg.png") center/cover no-repeat;
+  filter: brightness(0.35);
+  z-index: -1;
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 18px 20px;
+  background: transparent;
+  z-index: 10;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(48px, 9vw, 110px);
+  letter-spacing: 1px;
+  line-height: 0.9;
+  font-weight: 400;
+  transform: translateY(-4px);
+}
+
+.hero p {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  opacity: 0.8;
+}
+
+.scroll {
+  margin-top: 20px;
+  opacity: 0.5;
+}
+
+.product {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+.product img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.7));
+}
+
+.product h2 {
+  margin-top: 20px;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(2.2rem, 4vw, 42px);
+}
+
+.product p {
+  font-size: clamp(1rem, 2vw, 18px);
+  opacity: 0.8;
+}
+
+.product-note {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  opacity: 0.65;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+button,
+.button {
+  margin-top: 15px;
+  padding: 12px 35px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover,
+.button:hover {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .product {
+    padding: 60px 16px;
+    min-height: auto;
+  }
+
+  button,
+  .button {
+    padding: 12px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .product h2 {
+    font-size: 32px;
+  }
+
+  .product img {
+    max-width: 100%;
+  }
+}
